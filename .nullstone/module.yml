@@ -1,0 +1,16 @@
+org_name: nullstone
+name: gcp-gke-gpu-node-pool
+friendly_name: GKE GPU Node Pool
+description: Creates a GPU node pool with time-slicing for an existing GKE cluster.
+category: block
+subcategory: ""
+provider_types:
+    - gcp
+platform: node-pool
+subplatform: gke
+type: ""
+appCategories: []
+is_public: true
+tool_name: opentofu
+include: []
+source_url: https://github.com/nullstone-modules/gcp-gke-gpu-node-pool

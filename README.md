@@ -28,8 +28,9 @@ target this pool, and tolerate the GPU taint.
 
 ## Inputs
 
-- `zones: list(string)` (required)
-  - Zones for GPU nodes. GPU machine families are only available in specific zones; check with
+- `num_node_zones: number` — default `2`
+  - The number of zones to allocate GPU nodes. Zones are pulled from the zones available in the
+    cluster's region. NOTE: GPU machine families are not available in every zone; check with
     `gcloud compute accelerator-types list --filter="name=<accelerator_type>"`.
 - `machine_type: string` — default `g4-standard-48`
 - `accelerator_type: string` — default `nvidia-rtx-pro-6000`
@@ -41,8 +42,6 @@ target this pool, and tolerate the GPU taint.
 - `spot: bool` — default `false`
 - `disk_type: string` — default `hyperdisk-balanced`
 - `disk_size: number` — default `100`
-- `name: string` (optional) — pins the exact node pool name; otherwise generated from
-  `<random-suffix>-gpu-` plus a provider-appended unique suffix.
 
 ## VRAM budgeting with time-slicing
 
