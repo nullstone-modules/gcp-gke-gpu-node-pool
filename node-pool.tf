@@ -51,7 +51,7 @@ resource "google_container_node_pool" "this" {
     spot            = var.spot
     service_account = local.node_service_account_email
     oauth_scopes    = ["https://www.googleapis.com/auth/cloud-platform"]
-    labels          = local.k8s_labels
+    labels          = local.node_labels
     resource_labels = local.labels
     tags            = ["gke-node", "${local.cluster_name}-gke"]
 
