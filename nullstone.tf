@@ -19,7 +19,7 @@ locals {
     environment        = local.env_name
     owner              = local.labels["owner"]
     project            = local.stack_name
-    dataclassification = local.labels["dataclassification"]
+    dataclassification = try(local.labels["dataclassification"], null)
     application        = local.block_name
 
     "nullstone.io/env"   = local.env_name
